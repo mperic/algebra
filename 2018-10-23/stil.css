@@ -1,0 +1,26 @@
+#odlomak>p {
+	color: black !important;
+}
+
+div {
+	border: 1px black solid;
+}
+
+table {
+	border:1px solid red;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+tr, td, th {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.m-100 {
+	margin: 100px;
+}
+
+div.klasa1 .klasa2 {
+	color: yellow;
+}
