@@ -37,5 +37,4 @@ $arr11 = [11];
 $arr20 = [$arr10, $arr11];
 
 var_dump($arr20);
-
 ?>
