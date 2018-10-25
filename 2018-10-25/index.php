@@ -38,4 +38,6 @@ echo("<br>");
 
 echo("3==='3' " . (3==="3")); // usporedba
 echo("<br>");
+
+git test
 ?>
