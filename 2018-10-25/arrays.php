@@ -10,4 +10,24 @@ echo("<br>");
 rsort($arr1); //sort od najveceg prema najmanjem
 var_dump($arr1);
 echo("<br>");
+
+// Sortiranje uz zadrzavnaje indeksa
+asort($arr1);
+var_dump($arr1);
+echo("<br>");
+arsort($arr1);
+var_dump($arr1);
+echo("<br>");
+
+// prebrojavanje elemenata
+echo("Count: ");
+echo(count($arr1));
+echo("<br>");
+
+// explode i implode
+var_dump(explode("-", "Ivan-Ivic-30"));
+echo("<br>");
+echo(implode($arr1));
+echo("<br>");
+echo(implode("*", $arr1));
 ?>
