@@ -30,4 +30,12 @@ echo("<br>");
 echo(implode($arr1));
 echo("<br>");
 echo(implode("*", $arr1));
+
+echo("<br> 3D polje <br>");
+$arr10 = [10];
+$arr11 = [11];
+$arr20 = [$arr10, $arr11];
+
+var_dump($arr20);
+
 ?>
