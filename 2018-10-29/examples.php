@@ -55,3 +55,14 @@ $people = [
 // iterirati kroz polje i onda 
 // ispucati van na ekran da je svaka osoba u svom redu
 
+$data = "Sasa,Fajkovic,29,Matea,Mateic,30,Ivan,Ivic,31";
+
+$arr = explode(",", $data);
+
+for ($i=0; $i < sizeof($arr); $i++) { 
+  if ($i%3==0) {
+    echo("<br>");
+  }
+
+  echo($arr[$i] . " ");
+}
