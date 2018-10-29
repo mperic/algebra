@@ -55,6 +55,4 @@ foreach ($people as $person) {
     " Last name: " .$person["lastName"] .
     "<br>"
   );
-
- 
 }
