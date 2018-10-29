@@ -47,3 +47,11 @@ $people = [
 
 </table>
 
+<?php
+
+// Imamo CSV string 
+// Sasa,Fajkovic,29,Matea,Mateic,30,Ivan,Ivic,31
+// String prebaciti u polje, 
+// iterirati kroz polje i onda 
+// ispucati van na ekran da je svaka osoba u svom redu
+
