@@ -20,27 +20,30 @@ $people = [
   array("fname"=>"Marko", "lname"=>"Markic", "postalCode"=>"51000", "city"=>"Rijeka")
 ];
 
-echo("<table>");
-  echo("<tr>");
-    echo("<th>Imenik</th>");
-  echo("</tr>");
-  echo("<tr>");
-    echo("<th>Ime</th>");
-    echo("<th>Prezime</th>");
-    echo("<th>Postanski broj</th>");
-    echo("<th>Grad</th>");
-  echo("</tr>");
+?>
 
+<table>
+  <tr>
+    <th>Imenik</th>
+  </tr>
+  <tr>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Postanski broj</th>
+    <th>Grad</th>
+  </tr>
+
+<?php
   foreach($people as $person) {
-    echo("<tr>");
-    echo("<td>" . $person["fname"] . "</td>");
-    echo("<td>" . $person["lname"] . "</td>");
-    echo("<td>" . $person["postalCode"] . "</td>");
-    echo("<td>" . $person["city"] . "</td>");
-  echo("</tr>");
+    echo("<tr>".
+    "<td>" . $person["fname"] . "</td>".
+    "<td>" . $person["lname"] . "</td>".
+   "<td>" . $person["postalCode"] . "</td>".
+   "<td>" . $person["city"] . "</td>".
+  "</tr>");
   }
 
-echo("</table>");
+  ?>
 
-?>
+</table>
 
