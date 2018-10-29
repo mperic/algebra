@@ -29,15 +29,32 @@ foreach ($people as $person) {
 }
 
 //Zadatak 1 - ispisi sve do Ivana
+echo("<hr>");
 foreach ($people as $person) {
-  if ($person["firstName"] == "Ivan") {
-    break;
-  }
-
   echo(
     "ID: " . $person["id"] . 
     " First name: " . $person["firstName"] .
     " Last name: " .$person["lastName"] .
     "<br>"
   );
+
+  if ($person["firstName"] == "Ivan") {
+    break;
+  }
+}
+
+// Ispisi sve osobe koje se zovu Ivan
+echo("<hr>");
+foreach ($people as $person) {
+  if ($person["firstName"] != "Ivan") {
+    continue;
+  }
+  echo(
+    "ID: " . $person["id"] . 
+    " First name: " . $person["firstName"] .
+    " Last name: " .$person["lastName"] .
+    "<br>"
+  );
+
+ 
 }
