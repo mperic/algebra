@@ -25,3 +25,18 @@ echo "10 * 5 = " . calc("*", 10, 5) . "<br>";
 echo "10 / 5 = " . calc("/", 10, 5) . "<br>";
 
 echo "<hr>";
+
+//Nacrtati kvadrat N velicine
+
+function drawSquare($size) {
+  for ($i = 0; $i<$size; $i++) {
+    for ($j = 0; $j<$size; $j++) {
+      echo "X";
+    }
+    echo "<br>";
+  }
+}
+
+drawSquare(5);
+
+echo "<hr>";
