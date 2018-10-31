@@ -17,3 +17,28 @@ $file = fopen("files/pero.txt", "r");
 echo fread($file, filesize("files/pero.txt"));
 fclose($file);
 
+// citanje linije po liniju - 1. nacin
+echo "<hr>";
+$file = fopen("files/pero.txt", "r");
+
+while (!feof($file)) {
+  $line = fgets($file);
+  echo $line . "<br>";
+}
+fclose($file);
+
+// Citanje linije po linije - pristup 2
+echo "<hr>";
+$file = fopen("files/pero.txt", "r");
+
+while (($line = fgets($file)) !== false) {
+  echo $line . "<br>";
+}
+
+fclose($file);
+
+// Upisivanje u txt datoteku
+
+$file = fopen("files/pero.txt", "a");
+fwrite ($file, "\n Kamion");
+fclose($file);
