@@ -27,11 +27,11 @@ echo "10 / 5 = " . calc("/", 10, 5) . "<br>";
 echo "<hr>";
 
 //Nacrtati kvadrat N velicine
-
-function drawSquare($size) {
+// Primjer s defaultnim parametrom
+function drawSquare($size, $symbol = "X") {
   for ($i = 0; $i<$size; $i++) {
     for ($j = 0; $j<$size; $j++) {
-      echo "X";
+      echo $symbol;
     }
     echo "<br>";
   }
