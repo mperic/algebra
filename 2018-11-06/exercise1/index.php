@@ -4,12 +4,10 @@ $filePath = "data.txt";
 $handle = fopen($filePath, "r");
 
 function calculateAge($dateOfBirth) {
-
-$dateOfBirth = DateTime::createFromFormat('Y-m-d', $dateOfBirth)->format('Y-m-d');
   
   $current = date("Y-m-d");
   $interval = date_diff(new DateTime($dateOfBirth), new DateTime($current));
-  
+
   return $interval->format("%y");
 }
 ?>
