@@ -18,6 +18,7 @@ $handle = fopen($filePath, "r");
 
 while (($line = fgets($handle)) !== false) {
   $dataArray = explode(",", $line);
+  
   echo "<tr>";
   foreach($dataArray as $data) {
     echo "<td>".$data."</td>";
