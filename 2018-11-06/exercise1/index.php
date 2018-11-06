@@ -2,6 +2,16 @@
 
 $filePath = "data.txt";
 $handle = fopen($filePath, "r");
+
+function calculateAge($dateOfBirth) {
+
+$dateOfBirth = DateTime::createFromFormat('Y-m-d', $dateOfBirth)->format('Y-m-d');
+  
+  $current = date("Y-m-d");
+  $interval = date_diff(new DateTime($dateOfBirth), new DateTime($current));
+  
+  return $interval->format("%y");
+}
 ?>
 
 <table>
@@ -18,11 +28,12 @@ $handle = fopen($filePath, "r");
 
 while (($line = fgets($handle)) !== false) {
   $dataArray = explode(",", $line);
-  
+
   echo "<tr>";
   foreach($dataArray as $data) {
     echo "<td>".$data."</td>";
   }
+  echo "<td>" . calculateAge(trim($data)) . "</td>";
   echo "</tr>";
 }
 ?>
