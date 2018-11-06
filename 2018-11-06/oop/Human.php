@@ -2,7 +2,7 @@
 
 class Human {
   // Svojstva tj property objekata
-  public $age = "";
+  private $age = "";
   public $height = "";
 
   // metoda walk
@@ -15,7 +15,7 @@ class Human {
     echo $what;
   }
 }
-
+/*
 $human1 = new Human(); // Kreiramo objekt iz klase Human. Pozivamo konstruktor
 $human1->age = 25;
 $human1->height=180;
@@ -29,3 +29,4 @@ $human2 = new Human();
 $human2->age=30;
 $human2->height=190;
 var_dump($human2);
+*/
