@@ -3,8 +3,14 @@
 require_once 'Vehicle.php';
 
 class Airplane extends Vehicle {
-  $wingsCount;
-  $wingsSpan;
+  public $wingsCount;
+  public $wingsSpan;
   
-  function talkToControlTower() {}
+  public function talkToControlTower($textToTalk) {
+    echo "Airplane to control center: " . $textToTalk;
+  }
+
+  public function drive() {
+    echo "The airplane is flying";
+  }
 }

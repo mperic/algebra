@@ -1,11 +1,11 @@
 <?php
 
 class Vehicle {
-  $wheelsCount;
-  $steeringWheel;
-  $maxSpeed;
+  protected $wheelsCount;
+  protected $steeringWheel;
+  protected $maxSpeed;
 
-  function drive() {
+  private function drive() {
     echo "The vehicle is driving!";
    }
 }
