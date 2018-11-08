@@ -19,7 +19,7 @@ echo "<br>";
 $airplane->talkToControlTower("Howdy folks");
 
 echo "<br>";
-$bicycle = new Bicycle(2);
+$bicycle = new Bicycle(-5);
 $bicycle->drive();
 var_dump($bicycle);
 
