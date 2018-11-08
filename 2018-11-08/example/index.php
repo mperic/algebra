@@ -63,3 +63,19 @@ foreach ($data as $row) {
     
   </body>
 </html>
+
+<?php
+// date format conversion example
+// make function that changes 10.05.1989 to 1989-05-10
+
+function dateConversion ($input) {
+ /*  $exploded = explode(".", $input);
+  $reversed = array_reverse($exploded);
+  $imploded = implode("-", $reversed);
+  
+  return $imploded; */
+
+  return implode("-", array_reverse(explode(".", $input)));
+}
+
+echo dateConversion("10.05.1989");
