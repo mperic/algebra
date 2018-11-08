@@ -3,6 +3,7 @@
 require_once 'model/Vehicle.php';
 require_once 'model/Airplane.php';
 require_once 'model/Bicycle.php';
+require_once 'model/Car.php';
 
 /*
 $vehicle = new Vehicle();
@@ -19,3 +20,10 @@ $airplane->talkToControlTower("Howdy folks");
 
 $bicycle = new Bicycle();
 $bicycle->drive();
+
+echo "<br>";
+$car = new Car();
+$car->setIsCabrio(TRUE);
+echo "<br>";
+$car->drive();
+var_dump($car);

@@ -1,11 +1,17 @@
 <?php
 
-class Vehicle {
+require_once "DriveInterface.php";
+
+class Vehicle implements DriveInterface {
   protected $wheelsCount;
   protected $steeringWheel;
   protected $maxSpeed;
 
-  private function drive() {
-    echo "The vehicle is driving!";
+  public function drive() {
+    echo $this->getDrivingText();
+   }
+
+   private function getDrivingText() {
+     return "The vehicle is driving!";
    }
 }
