@@ -18,8 +18,10 @@ $airplane->drive();
 echo "<br>";
 $airplane->talkToControlTower("Howdy folks");
 
-$bicycle = new Bicycle();
+echo "<br>";
+$bicycle = new Bicycle(2);
 $bicycle->drive();
+var_dump($bicycle);
 
 echo "<br>";
 $car = new Car();

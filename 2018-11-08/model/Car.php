@@ -5,6 +5,8 @@ require_once 'Vehicle.php';
 class Car extends Vehicle {
   private $isCabrio;
 
+  function __construct() { }
+
   public function getIsCabrio() {
     return $this->isCabrio;
   }
