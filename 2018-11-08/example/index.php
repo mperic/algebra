@@ -1,6 +1,13 @@
 <?php
 
 require_once "data.php";
+require_once "Motorcycle.php";
+
+$motorcyclesList = [];
+
+foreach ($data as $row) {
+  
+}
 
 ?>
 
@@ -8,6 +15,9 @@ require_once "data.php";
   <head>
     <title>Motori</title>
     <style>
+      table, th, td {
+        border: 1px solid black;
+      }
     
     </style>
   </head>
