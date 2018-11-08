@@ -1,13 +1,13 @@
 <?php
 
 class Motorcycle {
-  $manufacturer;
-  $model;
-  $color;
-  $isSingleSeat;
+  public $manufacturer;
+  public $model;
+  public $color;
+  public $isSingleSeat;
 
   function __construct($man, $mod, $color, $ss) {
-    $this->manufacturter = $man;
+    $this->manufacturer = $man;
     $this->model = $mod;
     $this->color = $color;
     $this->isSingleSeat = $ss;

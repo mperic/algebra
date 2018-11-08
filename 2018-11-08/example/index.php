@@ -6,7 +6,15 @@ require_once "Motorcycle.php";
 $motorcyclesList = [];
 
 foreach ($data as $row) {
-  
+  $moto = new Motorcycle(
+    $row['manufacturer'],
+    $row['model'],
+    $row['color'],
+    $row['singleSeat']
+  );
+  array_push($motorcyclesList, $moto);
+
+
 }
 
 ?>
@@ -25,20 +33,20 @@ foreach ($data as $row) {
     <table>
 
 <?php
-  foreach($data as $row) {
+  foreach($motorcyclesList as $moto) {
     echo "<tr>";
-      echo "<td>" . $row['manufacturer'] . "</td>";
-      echo "<td>" . $row['model'] . "</td>";
-      echo "<td>" . $row['color'] . "</td>";
+      echo "<td>" . $moto->manufacturer . "</td>";
+      echo "<td>" . $moto->model . "</td>";
+      echo "<td>" . $moto->color . "</td>";
       echo "<td> <select>";
 
-      if ($row['singleSeat'] == 'Yes') {
+      if ($moto->isSingleSeat == 'Yes') {
         echo "<option selected value=Yes>Yes</option>";
       } else {
         echo "<option value=Yes>Yes</option>";
       }
 
-      if ($row['singleSeat'] == 'No') {
+      if ($moto->isSingleSeat == 'No') {
         echo "<option selected value=No>No</option>";
       } else {
         echo "<option value=No>No</option>";
