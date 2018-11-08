@@ -3,5 +3,5 @@
 require_once 'Vehicle.php';
 
 class Bicycle extends Vehicle {
-  $trainingWheelsCount;
+  public $trainingWheelsCount;
 }
