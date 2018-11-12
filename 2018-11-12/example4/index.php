@@ -1,8 +1,7 @@
 <?php
 
 function validateNumber($number) {
-  $number = str_replace(" ","",$number);
-  $number = str_replace("-","",$number);
+  $number = sanitaze($number);
 
   if(strpos($number, "+385") !== FALSE) {
    return validateWith385($number);
@@ -42,6 +41,12 @@ function validateWithout385($number) {
     return "Valid";
   }
    return "Invalid";
+}
+
+function sanitaze($number) {
+  $number = str_replace(" ","",$number);
+  $number = str_replace("-","",$number);
+  return $number;
 }
 
 
