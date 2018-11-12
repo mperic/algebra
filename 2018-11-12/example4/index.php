@@ -5,39 +5,46 @@ function validateNumber($number) {
   $number = str_replace("-","",$number);
 
   if(strpos($number, "+385") !== FALSE) {
-    if (strpos($number, "9") != 4 || !is_numeric($number[5])) {
-      return "Invalid";
-    }
-
-    $secondPart;
-    if ($number[6] == "/") {
-      $secondPart = substr($number, 7, 100);
-    } else {
-      $secondPart = substr($number, 6, 100);
-    }
-
-    if(is_numeric($secondPart)) {
-      return "Valid";
-    }
-    return "Invalid";
-
+   return validateWith385($number);
   } else if (strpos($number, "0") === 0 && strpos($number, "9") === 1) {
-
-    $secondPart;
-    if ($number[3] == "/") {
-      $secondPart = substr($number,4,100);
-    } else {
-      $secondPart = substr($number,5,100);
-    }
-
-    if (is_numeric($secondPart)) {
-      return "Valid";
-    }
-     return "Invalid";
-
+   return validateWithout385($number);
   }
   return "Invalid";
 }
+
+function validateWith385($number) {
+  if (strpos($number, "9") != 4 || !is_numeric($number[5])) {
+    return "Invalid";
+  }
+
+  $secondPart;
+  if ($number[6] == "/") {
+    $secondPart = substr($number, 7, 100);
+  } else {
+    $secondPart = substr($number, 6, 100);
+  }
+
+  if(is_numeric($secondPart)) {
+    return "Valid";
+  }
+  return "Invalid";
+}
+
+function validateWithout385($number) {
+  $secondPart;
+  if ($number[3] == "/") {
+    $secondPart = substr($number,4,100);
+  } else {
+    $secondPart = substr($number,5,100);
+  }
+
+  if (is_numeric($secondPart)) {
+    return "Valid";
+  }
+   return "Invalid";
+}
+
+
 
 echo "+385912220991 = " . validateNumber("+385912220991") . "<br>";
 echo "+385 91 222 0991 = " . validateNumber("+385 91 222 0991") . "<br>";
