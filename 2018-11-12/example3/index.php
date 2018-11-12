@@ -9,7 +9,7 @@ function formatRegistrationPlate($plate) {
       return str_replace("-", "#", $plate);
     }
   } else if (strlen($plate) == 8) {
-    return substr($plate,0,2) . "#" . substr($plate,2,4) . "#" . substr($plate,5,2);
+    return substr($plate,0,2) . "#" . substr($plate,2,4) . "#" . substr($plate,6,2);
   } else {
     die("krivi unos");
   }
