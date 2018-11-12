@@ -1,0 +1,5 @@
+jabuka,5,350,no
+lubenica,1,50,no
+jagoda,15,1,yes
+kruska,10,8,no
+kiwi,10,50,no
