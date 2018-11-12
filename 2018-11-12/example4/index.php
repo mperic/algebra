@@ -72,4 +72,6 @@ echo "091 2220 991 = " . validateNumber("091 2220 991") . "<br>";
 echo "091 2220-991 = " . validateNumber("091 2220-991") . "<br>";
 echo "01/222-0991 = " . validateNumber("01/222-0991") . "<br>";
 echo "01 222 0991 = " . validateNumber("01 222 0991") . "<br>";
+echo "091/22-20-991 = " . validateNumber("091/22-20-991") . "<br>";
+echo "091/22--20-991 = " . validateNumber("091/22--20-991") . "<br>";
 echo "abc = " . validateNumber("abc") . "<br>";
