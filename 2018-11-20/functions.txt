@@ -1,0 +1,46 @@
+-- apsolutna vrijednost broja
+select abs(VALUE_INT) as ABS from functions where VALUE_TEXT = 'dugovanje'
+
+konkatenacija
+select CONCAT(VALUE_INT, ' HRK') from functions
+
+--lowercase
+select lower(VALUE_TEXT) from functions
+
+
+--uppercase
+select upper(VALUE_TEXT) from functions
+
+--left - daj mi X znakova s lijeve strane
+select left(VALUE_TEXT, 3) from functions
+
+
+--right - daj mi X znakova s desne strane
+select right(VALUE_TEXT, 3) from functions
+
+-- avg- prosjek
+select avg(VALUE_INT) from functions
+
+-- max vrijednost
+select max(VALUE_INT) from functions
+
+-min vrijednost
+select min(VALUE_INT) from functions
+
+--count - prebrojavanje
+select count(*) from functions
+
+-- trenutni timestamp
+select CURRENT_TIMESTAMP
+
+-- godina iz datuma
+select YEAR(CURRENT_TIMESTAMP)
+
+--mjesec iz datuma
+select MONTH(CURRENT_TIMESTAMP)
+
+--dan iz datuma
+select DAY(CURRENT_TIMESTAMP)
+
+-- kombinacija
+SELECT concat(upper(left(VALUE_TEXT,1)),lower(substr(VALUE_TEXT,2,100))) from functions

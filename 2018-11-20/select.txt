@@ -28,3 +28,6 @@ FROM PERSON p INNER JOIN CONTACT c ON p.ID = c.PERSON_ID
 INNER JOIN contact_type ct ON c.CONTACT_TYPE_ID = ct.ID 
 INNER JOIN city ON p.CITY_ID = city.ID
 
+-- dohvati sve gradove u kojima ne zivi niti jedna osoba
+SELECT * from city left join person on city.ID = person.CITY_ID where person.CITY_ID is null
+
