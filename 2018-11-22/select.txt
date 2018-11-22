@@ -1,0 +1,37 @@
+-- Dohvati sve brojeve racuna koji imaju nevraceni film
+select customer_movie.ID from customer_movie where customer_movie.RETURNED != 1
+
+select customer_movie.ID from customer_movie where customer_movie.RETURNED = 0
+
+-- pronaci sve glumce cije ime sadrzi "in"
+select * FROM actor where FIRST_NAME like '%in%'
+
+-- nazivi filmova cije ja cijena veca od 5kn
+select * FROM movie where price > 5
+
+-- za koje zanrove ne postoji niti jedna definirani film
+select genre.TITLE from genre left join movie_genre on genre.id = movie_genre.GENRE_ID where movie_genre.MOVIE_ID IS NULL
+
+-- ispisati u kojim filmovima glume koji glumci
+select title, first_name, last_name from movie inner join movie_actor on movie.ID = movie_actor.MOVIE_ID inner join actor on movie_actor.ID = actor.ID
+
+-- ispisati sve filmove, glumce, osobe koje su ih posudile, cijenu filma i status povrata filma
+select title, price, customer.first_name AS kupac, actor.first_name, last_name, receipt_id, returned from movie 
+inner join movie_actor on movie.ID = movie_actor.MOVIE_ID
+inner join actor on movie_actor.ID = actor.ID
+inner join customer_movie on movie.ID = customer_movie.MOVIE_ID
+inner join customer on customer.ID = customer_movie.CUSTOMER_ID
+
+-- imena svih kupaca koji imaju ne vracene filmove
+-- v1 - imamo dupliciranje imena
+select first_name from customer inner join customer_movie on customer_movie.CUSTOMER_ID = customer.ID where customer_movie.RETURNED = 0
+
+-v2 nemamo dupliciranje imena
+select DISTINCT first_name from customer inner join customer_movie on customer_movie.CUSTOMER_ID = customer.ID where customer_movie.RETURNED = 0
+
+
+-- dohvatiti racune (id i timestamp), id filma na tom racunu i cijenu filma
+select r.id as idReceipt, timestamp, price from receipt r inner join customer_movie cm on cm.RECEIPT_ID = r.ID inner join movie m on m.ID = cm.MOVIE_ID
+
+-- Dohvati ukupno koliko je koji racun kostao i njegov timestamp
+select r.id as idReceipt, timestamp, sum(price) from receipt r inner join customer_movie cm on cm.RECEIPT_ID = r.ID inner join movie m on m.ID = cm.MOVIE_ID group by r.ID
