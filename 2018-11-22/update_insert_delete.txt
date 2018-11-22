@@ -1,0 +1,14 @@
+-- Azuriraj Tom Cruise u Tom Kruz
+update actor set last_name = 'Kruz' where actor.FIRST_NAME = 'Tom' && actor.LAST_NAME = 'Cruise'
+
+
+-- unesi gorana visnjica u glumce
+insert into actor (first_name, last_name) values ('Goran','Visnjic')
+
+-- obrisi zanr thriller jer se nigdje ne koristi
+delete from genre where id = 4
+
+-- dodavanje novog stupca tablici
+ALTER TABLE `customer` ADD `active` SMALLINT NOT NULL AFTER `FIRST_NAME`;
+
+
