@@ -1,6 +1,10 @@
 <?php
 
 require_once("model/Car.php");
+
+session_start();
+
+var_dump($_SESSION);
 /*
 $c1 = new Car("Kia", "Stinger", "2018", "150");
 
@@ -19,7 +23,7 @@ echo "<p> {$c1->getKW()} </p>";
   </head>
 
   <body>
-    <form action="newCar.php">
+    <form action="newCar.php" method="POST">
       <label>Manufacturer:</label>
       <input type="text" name="manufacturer">
       <br>
