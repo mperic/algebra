@@ -5,12 +5,10 @@ require_once("model/Car.php");
 //var_dump($_REQUEST);
 
 $car = new Car(
-  $_REQUEST["manufacturer"],
-  $_REQUEST["model"],
-  $_REQUEST["year"],
-  $_REQUEST["kW"]
+  $_GET["manufacturer"],
+  $_GET["model"],
+  $_GET["year"],
+  $_GET["kW"]
 ); 
 
 var_dump($car);
-
-db->save/()
