@@ -6,7 +6,7 @@ class Car {
   private $year;
   private $kW;
 
-  public __construct($man, $model, $year, $kW) {
+  public function __construct($man, $model, $year, $kW) {
     $this->manufacturer = $man;
     $this->model = $model;
     $this->year = $year;
