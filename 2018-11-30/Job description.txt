@@ -1,0 +1,16 @@
+MVP:
+Trazilica
+unos clanaka
+Editiranje clanaka
+Ne treba korisnicki account
+
+1 clanak sadrzi:
+Naslov i tekst
+Tekst ima slova, brojke, slike, linkove, itd
+
+-------
+Nije MVP
+
+Brisnaje clanaka
+Admin sucelje za brisanje clanaka
+Logiranje promjena
