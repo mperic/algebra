@@ -33,9 +33,14 @@ class ArticleRepository {
 
   public function getArticleDetails($id) {
     $conn = DbConfig::getConnection();
-  $query = "SELECT * FROM ARTICLE WHERE ID = {$id}";
+    //$query = "SELECT * FROM ARTICLE WHERE ID = {$id}";
+  //SQL injection: umjesto id ako ubacimo: 1; DELETE FROM ARTICLE;
   try {
-    $result = $conn->query($query)->fetchAll();
+    $stmt = $conn->prepare("SELECT * FROM ARTICLE WHERE ID = :id");
+    $stmt->bindParam(':id', $id);
+    $result = $stmt->execute();
+    $result = $stmt->fetchAll();
+    //$result = $conn->query($query)->fetchAll();
   } catch (PDOException $e) {
     die("Greška kod dohvata detalja o članku.");
   }
