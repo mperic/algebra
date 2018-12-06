@@ -5,6 +5,7 @@ require_once('../model/Article.php');
 
 $searchQuery = "";
 $articleId = "";
+$articleRepository = new ArticleRepository();
 
 if(array_key_exists('searchTerm', $_GET)) {
   $searchQuery = $_GET['searchTerm'];
@@ -17,6 +18,7 @@ if(array_key_exists('searchTerm', $_GET)) {
 }
 
 function displaySearchResults($searchTerm) {
+  global $articleRepository;
   $articles = $articleRepository->getArticlesBySearchTerm($searchTerm);
 
   foreach ($articles as $article) {
@@ -25,6 +27,7 @@ function displaySearchResults($searchTerm) {
 }
 
 function displayArticleDetails($articleId) {
+  global $articleRepository;
   $article = $articleRepository->getArticleDetails($articleId);
 
   drawSingleArticleDetails($article);
