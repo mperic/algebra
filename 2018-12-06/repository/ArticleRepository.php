@@ -51,7 +51,16 @@ class ArticleRepository {
   );
 
   return $a;
+  }
 
+  public function updateArticle($id, $title, $body) {
+    $query = "
+    UPDATE ARTICLE 
+    SET TITLE = '{$title}', BODY = '{$body}' 
+    WHERE ID = {$id}";
+
+    $conn = DbConfig::getConnection();
+    $conn->exec($query);
   }
 
 }

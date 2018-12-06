@@ -13,8 +13,11 @@ if(array_key_exists('searchTerm', $_GET)) {
 } else if (array_key_exists('articleId', $_GET)) {
   $articleId = $_GET["articleId"];
   displayArticleDetails($articleId);
-} else if (array_key_exists('',$_POST)) {
-
+} else if (array_key_exists('command',$_GET)) {
+  $articleId = $_POST['articleId'];
+  $articleTitle = $_POST['title'];
+  $articleBody = $_POST['body'];
+  updateSingleArticle($articleId, $articleTitle, $articleBody);
 } else {
   die("Nedozvoljeni pokusaj ulaza!");
 }
@@ -68,4 +71,12 @@ function drawSingleArticleDetails($article) {
     </form>
   </div>
   <?php
+}
+
+function updateSingleArticle($id, $title, $body) {
+  global $articleRepository;
+  $articleRepository->updateArticle($id, $title, $body);
+
+  //header("Location: ArticleService.php?articleId={$id}");
+  displayArticleDetails($id);
 }
