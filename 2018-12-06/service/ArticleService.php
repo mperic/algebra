@@ -19,8 +19,11 @@ if(array_key_exists('searchTerm', $_GET)) {
 
 function displaySearchResults($searchTerm) {
   global $articleRepository;
+  try {
   $articles = $articleRepository->getArticlesBySearchTerm($searchTerm);
-
+  } catch (PDOException $e) {
+    die("ode 3");
+  }
   foreach ($articles as $article) {
     drawSingleArticleTitleBox($article);
   }
