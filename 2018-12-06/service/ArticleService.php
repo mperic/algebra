@@ -21,10 +21,8 @@ function displaySearchResults($searchTerm) {
   global $articleRepository;
   try {
   $articles = $articleRepository->getArticlesBySearchTerm($searchTerm);
-  } catch (PDOException  $e) {
+  } catch (PDOException | LogicException $e) {
     die("POD riknuo!");
-  } catch (LogicException $e) {
-    die("Logika riknula!");
   }
   foreach ($articles as $article) {
     drawSingleArticleTitleBox($article);
