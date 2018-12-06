@@ -58,8 +58,7 @@ function drawSingleArticleDetails($article) {
         '<?php echo $article->getTitle(); ?> 
         '>
       <br>
-      <textarea name="body" rows=10 cols=20> 
-      <?php echo $article->getBody(); ?>
+      <textarea name="body" rows=10 cols=20><?php echo $article->getBody(); ?>
       </textarea>
       <br>
       <input type="hidden" 
