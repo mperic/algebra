@@ -7,6 +7,8 @@ class ArticleRepository {
   public function getArticlesBySearchTerm($searchTerm) {
 
     $conn = DbConfig::getConnection();
+    sleep(3);
+    $conn = DbConfig::getConnection();
 
     $query = 
     "SELECT * FROM ARTICLE 
