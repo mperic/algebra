@@ -13,6 +13,8 @@ if(array_key_exists('searchTerm', $_GET)) {
 } else if (array_key_exists('articleId', $_GET)) {
   $articleId = $_GET["articleId"];
   displayArticleDetails($articleId);
+} else if (array_key_exists('',$_POST)) {
+
 } else {
   die("Nedozvoljeni pokusaj ulaza!");
 }
@@ -21,8 +23,7 @@ function displaySearchResults($searchTerm) {
   global $articleRepository;
  
   $articles = $articleRepository->getArticlesBySearchTerm($searchTerm);
-  }
-  
+
   foreach ($articles as $article) {
     drawSingleArticleTitleBox($article);
   }
@@ -49,10 +50,22 @@ function drawSingleArticleDetails($article) {
 
   ?>
   <div class="singleArticle">
-    <h3> <?php echo $article->getTitle(); ?> </h3>
-    <br>
-    <p> <?php echo $article->getBody(); ?></p>
-  
+    <form action="ArticleService.php?command=update" method="post" >
+      <input type="text" name="title" value = 
+        '<?php echo $article->getTitle(); ?> 
+        '>
+      <br>
+      <textarea name="body" rows=10 cols=20> 
+      <?php echo $article->getBody(); ?>
+      </textarea>
+      <br>
+      <input type="hidden" 
+        name="articleId" 
+        value="<?php echo $article->getId();?>
+        ">
+      <br>
+      <button type="submit">Spremi izmjene</button>
+    </form>
   </div>
   <?php
 }

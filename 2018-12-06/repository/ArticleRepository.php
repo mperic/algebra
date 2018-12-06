@@ -7,17 +7,15 @@ class ArticleRepository {
   public function getArticlesBySearchTerm($searchTerm) {
   
     $conn = DbConfig::getConnection();
-  
-    throw new LogicException("kukulele");
-    //sleep(3);
-    //$conn = DbConfig::getConnection();
 
     $query = 
     "SELECT * FROM ARTICLE 
     WHERE TITLE LIKE '%{$searchTerm}%'";
-    
+    try {
     $result = $conn->query($query)->fetchAll();
-    
+    } catch (PDOException $e) {
+      die("Greška kod pretrage članaka!");
+    }
     $articlesList = [];
     foreach ($result as $row) {
       $a = new Article(
@@ -36,8 +34,12 @@ class ArticleRepository {
   public function getArticleDetails($id) {
     $conn = DbConfig::getConnection();
   $query = "SELECT * FROM ARTICLE WHERE ID = {$id}";
-
-  $result = $conn->query($query)->fetchAll();
+  try {
+    $result = $conn->query($query)->fetchAll();
+  } catch (PDOException $e) {
+    die("Greška kod dohvata detalja o članku.");
+  }
+  
   $result = $result[0];
 
   $a = new Article(
