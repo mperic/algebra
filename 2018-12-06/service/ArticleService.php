@@ -13,12 +13,30 @@ if(array_key_exists('searchTerm', $_GET)) {
 } else if (array_key_exists('articleId', $_GET)) {
   $articleId = $_GET["articleId"];
   displayArticleDetails($articleId);
-} else if (array_key_exists('command',$_GET)) {
+} else if (
+  array_key_exists('command',$_GET) && 
+  $_GET['command'] == 'update'
+  ) {
   $articleId = $_POST['articleId'];
   $articleTitle = $_POST['title'];
   $articleBody = $_POST['body'];
   updateSingleArticle($articleId, $articleTitle, $articleBody);
-} else {
+  }
+  else if (
+    array_key_exists('command',$_GET) && 
+    $_GET['command'] == 'insert' && sizeof($_POST) == 0
+  ) {
+    drawNewArticleScreen();
+  }
+  else if (
+    array_key_exists('command',$_GET) && 
+    $_GET['command'] == 'insert' && sizeof($_POST) != 0
+  ) {
+    $title = $_POST['title'];
+    $body = $_POST['body'];
+    insertNewArticle($title, $body);
+  }
+ else {
   die("Nedozvoljeni pokusaj ulaza!");
 }
 
@@ -78,4 +96,26 @@ function updateSingleArticle($id, $title, $body) {
 
   //header("Location: ArticleService.php?articleId={$id}");
   displayArticleDetails($id);
+}
+
+function insertNewArticle($title, $body) {
+  global $articleRepository;
+  
+  $articleRepository->insertNewArticle($title, $body);
+
+  header("Location: ../");
+}
+
+function drawNewArticleScreen() {
+  ?>
+  <form action="ArticleService.php?command=insert" method="post">
+  <label>Naziv članka</label>
+    <input type="text" name='title' required>
+    <br>
+    <label>Opis članka</label>
+    <textarea name="body" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="Dodaj novi">
+  </form>
+  <?php
 }

@@ -63,4 +63,13 @@ class ArticleRepository {
     $conn->exec($query);
   }
 
+  public function insertNewArticle($title, $body) {
+    $query = "
+    INSERT INTO ARTICLE (TITLE, BODY, DELETED, PUBLISHING_DATE) 
+    VALUES ('{$title}','{$body}', 0, 'CURRENT_TIMESTAMP' )";
+
+    $conn = DbConfig::getConnection();
+    $conn->exec($query);
+  }
+
 }
