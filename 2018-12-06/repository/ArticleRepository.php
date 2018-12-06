@@ -5,16 +5,18 @@ require_once("../db/DbConfig.php");
 class ArticleRepository {
 
   public function getArticlesBySearchTerm($searchTerm) {
-
+    try {
     $conn = DbConfig::getConnection();
-    
+  } catch (Exception $e) {
+    throw new Exception("Ajoj meni");
+  }
     //sleep(3);
     //$conn = DbConfig::getConnection();
 
     $query = 
     "SELECT * FROM ARTICLE 
     WHERE TITLE LIKE '%{$searchTerm}%'";
-
+    
     $result = $conn->query($query)->fetchAll();
     
     $articlesList = [];
