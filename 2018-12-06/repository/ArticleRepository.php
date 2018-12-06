@@ -6,9 +6,13 @@ class ArticleRepository {
 
   public function getArticlesBySearchTerm($searchTerm) {
 
+    try {
     $conn = DbConfig::getConnection();
-    sleep(3);
-    $conn = DbConfig::getConnection();
+    } catch (PDOException $e) {
+      die("Odeee 2");
+    }
+    //sleep(3);
+    //$conn = DbConfig::getConnection();
 
     $query = 
     "SELECT * FROM ARTICLE 

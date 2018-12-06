@@ -8,12 +8,13 @@ class DbConfig {
   public static function getConnection() {
     if(self::$instance == null) {
      self::$instance = new PDO("mysql:host=localhost;dbname=wikipedia",
-      'root', '');
+      'root', '123');
       self::$time = time(); 
     }
 
     //echo self::$time;
 
     return self::$instance;
+
   }
 }
