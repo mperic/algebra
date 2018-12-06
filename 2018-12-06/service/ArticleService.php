@@ -21,7 +21,7 @@ function displaySearchResults($searchTerm) {
   global $articleRepository;
   try {
   $articles = $articleRepository->getArticlesBySearchTerm($searchTerm);
-  } catch (PDOException | LogicException  $e) {
+  } catch (PDOException  $e) {
     die("POD riknuo!");
   } catch (LogicException $e) {
     die("Logika riknula!");
