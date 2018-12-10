@@ -1,0 +1,9 @@
+MUST HAVE
+1. Hompeage je filter soba po datumu
+2. Nakon odabira datuma prikaze sobe dostupne u tom periodu
+3. Klikom na sobu otvara detalje sobe i gumb za bookiranje.
+4. Kada bookira onda vratimo nazad na poèetnu
+
+NICE TO HAVE
+Recenzije soba
+Login posjetitelja
