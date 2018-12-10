@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Grande Mongo Hotel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <form action="controller/controller.php" method="get">
+      <label>Datum od: </label>
+      <input type="date" name="date-from">
+      <br>
+      <label>Datum do: </label>
+      <input type="date" name="date-to">
+      <br>
+      <input class="btn btn-success" type="submit" value="Pretraži">
+      <input type="hidden" name="action" value="dateInquery">
+    </form>
+    
+  </body>
+</html>
