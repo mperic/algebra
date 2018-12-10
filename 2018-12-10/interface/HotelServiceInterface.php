@@ -1,6 +1,6 @@
 <?php
 
-interface HotelService {
+interface iHotelService {
   public function getAvailableRooms();
 
   public function getRoomDetails($roomObject);
